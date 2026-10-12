@@ -1,45 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071824">
+<title>THE GOWN IS THE ARMOR | PATCH Music Theater</title>
 <style>
+html,body{margin:0;min-height:100%;background:#071824;color:#f6e5bc}
+body{font-family:Arial,sans-serif}
 #patch-gown-theater{box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;background:linear-gradient(160deg,#071827,#0b1a2a);border:1px solid #d3ae68;border-radius:16px;padding:12px;color:#f6e5bc;font-family:Arial,sans-serif;text-align:center}
 #patch-gown-theater *{box-sizing:border-box}
 #patch-gown-theater .pg-head{font-size:10px;letter-spacing:1.3px;color:#e4c681;font-weight:bold;margin:2px 0 10px}
 #patch-gown-theater .pg-stage{width:100%;aspect-ratio:1/1;position:relative;overflow:hidden;border:1px solid #28667c;border-radius:11px;background:#061423}
-#patch-gown-theater .pg-stage img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:patchGownFade 32s infinite;will-change:opacity,transform}
+#patch-gown-theater .pg-stage img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:patchGownFade 32s linear infinite;will-change:opacity,transform}
 #patch-gown-theater .pg-stage img:nth-child(1){animation-delay:0s}
 #patch-gown-theater .pg-stage img:nth-child(2){animation-delay:8s}
 #patch-gown-theater .pg-stage img:nth-child(3){animation-delay:16s}
 #patch-gown-theater .pg-stage img:nth-child(4){animation-delay:24s}
-@keyframes patchGownFade{0%{opacity:0;transform:scale(1.025)}3%{opacity:1}22%{opacity:1}25%{opacity:0;transform:scale(1.085)}100%{opacity:0}}
+/* A new scene appears at its 8-second boundary while the previous scene fades out. */
+@keyframes patchGownFade{0%{opacity:1;transform:scale(1.025)}22%{opacity:1}25%{opacity:0;transform:scale(1.085)}100%{opacity:0}}
 #patch-gown-theater .pg-shade{position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(3,13,24,.85));pointer-events:none}
 #patch-gown-theater .pg-name{position:absolute;bottom:12px;left:12px;right:12px;text-align:left;font-size:17px;font-weight:800;line-height:1.15;color:#ffe8b5;text-shadow:0 1px 6px #07121b}
 #patch-gown-theater .pg-sub{color:#56e2ed;font-size:9px;letter-spacing:.8px;margin-top:5px}
 #patch-gown-theater .pg-tag{font-size:9px;letter-spacing:1px;color:#59dce9;margin:11px 0 8px}
-#patch-gown-theater .pg-player-frame{position:relative;padding:5px;border-radius:13px;border:1px solid rgba(91,229,237,.62);background:linear-gradient(125deg,rgba(36,210,229,.16),rgba(214,169,92,.18));box-shadow:0 0 16px rgba(52,195,212,.10)}
-#patch-gown-theater .pg-player-frame:before,#patch-gown-theater .pg-player-frame:after{content:"";position:absolute;width:21px;height:21px;pointer-events:none;z-index:1}
-#patch-gown-theater .pg-player-frame:before{top:-2px;left:-2px;border-top:2px solid #e0b769;border-left:2px solid #e0b769;border-radius:12px 0 0 0}
-#patch-gown-theater .pg-player-frame:after{bottom:-2px;right:-2px;border-bottom:2px solid #54e5ee;border-right:2px solid #54e5ee;border-radius:0 0 12px 0}
-#patch-gown-theater iframe{width:100%;height:190px;border:0;border-radius:9px;display:block;background:#24282d}
 #patch-gown-theater .pg-player-note{font-size:9px;letter-spacing:.7px;color:#e1c485;margin:5px 0 8px}
 #patch-gown-theater .pg-quote{font-family:Georgia,serif;font-size:12px;font-style:italic;color:#e5c78a;margin:12px 0 2px;line-height:1.45}
 #patch-gown-theater .pg-foot{font-size:9px;color:#70cbd6;letter-spacing:1px;border-top:1px solid #314b59;padding-top:9px;margin-top:11px}
-@media(prefers-reduced-motion:reduce){#patch-gown-theater .pg-stage img{animation:none}#patch-gown-theater .pg-stage img:first-child{opacity:1}}
-  /* PATCH MUSIC THEATER — DESKTOP ONLY */
-@media screen and (min-width: 900px) {
-  #patch-gown-theater {
-    width: 760px !important;
-    max-width: calc(100% - 40px) !important;
-    margin: 20px auto !important;
-  }
-}
-  /* PATCH MUSIC THEATER — PAGE BACKGROUND */
-html, body {
-  background: #071824 !important;
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-}
+@media screen and (min-width:900px){#patch-gown-theater{width:760px;max-width:calc(100% - 40px);margin:20px auto}}
+/* PATCH GEOMETRY SOUND ENGINE — compact horizontal music bar */
+#patch-gown-theater .pg-player-frame{position:relative;border-radius:14px;border:1px solid rgba(91,229,237,.60);background:linear-gradient(125deg,#102a38,#071522 58%,#1a2730);box-shadow:inset 0 1px 0 rgba(255,232,181,.12),0 0 17px rgba(52,195,212,.10);padding:9px 12px 8px;overflow:hidden}
+#patch-gown-theater .pg-player-frame:before,#patch-gown-theater .pg-player-frame:after{content:"";position:absolute;width:20px;height:20px;pointer-events:none}
+#patch-gown-theater .pg-player-frame:before{top:0;left:0;border-top:2px solid #e0b769;border-left:2px solid #e0b769;border-radius:13px 0 0 0}
+#patch-gown-theater .pg-player-frame:after{bottom:0;right:0;border-bottom:2px solid #54e5ee;border-right:2px solid #54e5ee;border-radius:0 0 13px 0}
+#patch-gown-theater .pg-geometry-row{display:flex;align-items:center;gap:10px;min-height:83px}
+#patch-gown-theater .pg-transport{flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;color:#ffe3a3;background:radial-gradient(circle at 28% 20%,#2a4850,#0b2230 68%);border:1px solid #d9b66d;border-radius:12px;box-shadow:0 0 10px rgba(84,229,238,.16),inset 0 0 12px rgba(224,183,105,.12);font-size:20px;line-height:1;transition:box-shadow .2s,transform .2s}
+#patch-gown-theater .pg-transport:hover{box-shadow:0 0 18px rgba(84,229,238,.4);transform:translateY(-1px)}
+#patch-gown-theater .pg-transport:focus-visible,#patch-gown-theater .pg-mute:focus-visible,#patch-gown-theater .pg-seek:focus-visible{outline:2px solid #fff1c8;outline-offset:3px}
+#patch-gown-theater .pg-geometry-area{min-width:0;flex:1}
+#patch-gown-theater .pg-geometry-svg{display:block;width:100%;height:76px;overflow:hidden}
+#patch-gown-theater .pg-geometry-svg .pg-glyph{filter:drop-shadow(0 0 5px rgba(91,229,237,.50))}
+#patch-gown-theater .pg-timeline{display:flex;align-items:center;gap:9px;margin-top:2px}
+#patch-gown-theater .pg-time{font-size:10px;min-width:30px;color:#d5c69d;font-variant-numeric:tabular-nums}
+#patch-gown-theater .pg-time:last-of-type{text-align:right}
+#patch-gown-theater .pg-seek{--played:0%;flex:1;min-width:0;appearance:none;-webkit-appearance:none;height:4px;border:0;border-radius:99px;cursor:pointer;background:linear-gradient(to right,#e4bc73 0%,#58dce9 var(--played),#36505b var(--played),#36505b 100%)}
+#patch-gown-theater .pg-seek::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:#ffe1a1;border:2px solid #48cdd9;box-shadow:0 0 8px #4ed9e977}
+#patch-gown-theater .pg-seek::-moz-range-thumb{width:8px;height:8px;border-radius:50%;background:#ffe1a1;border:2px solid #48cdd9}
+#patch-gown-theater .pg-mute{flex:0 0 27px;width:27px;height:30px;display:grid;place-items:center;cursor:pointer;color:#6fe0e8;background:transparent;border:0;font-size:17px}
+#patch-gown-theater .pg-status{min-height:12px;color:#72cbd3;font-size:9px;letter-spacing:.55px;margin-top:3px}
+#patch-gown-theater audio{display:none}
+@media(max-width:440px){#patch-gown-theater .pg-player-frame{padding:8px}#patch-gown-theater .pg-geometry-row{gap:6px}#patch-gown-theater .pg-transport{flex-basis:38px;width:38px;height:38px}#patch-gown-theater .pg-geometry-svg{height:66px}#patch-gown-theater .pg-timeline{gap:5px}#patch-gown-theater .pg-time{font-size:9px}}
+@media(prefers-reduced-motion:reduce){#patch-gown-theater .pg-stage img{animation:none}#patch-gown-theater .pg-stage img:first-child{opacity:1}#patch-gown-theater .pg-transport{transition:none}}
 </style>
+</head>
+<body>
 <div id="patch-gown-theater">
   <div class="pg-head">♪ PATCH • MUSIC COMMAND</div>
   <div class="pg-stage">
@@ -48,18 +61,230 @@ body {
     <img alt="Scene 3: Glowing digital frequency rings" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjr4fghkQ0Ap_KKn7C9XLb9lLlSZEobkMSqy96AIzMnMKaMPfd5_DMpbm2xm0OjX-mHvjNpZY4PPk5h22GxqpSrNv1ScUFD9BXa6_0SIxdUAd9poLsPDi9NyXuPlKfNyYFkIlhm2SZ7EuF3XAT-fAARIB0BNFrzZyAWqCP9a9QeMY8Xl4s9HisrnTBsmxU/s660/scene3.jpg" />
     <img alt="Scene 4: The armored woman" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8HasTFWCmOuaa0XaWMBqJxsykHbvlvQ9yP1pteQV5Q1xrtJxYbVseWaEY9KeeKVNS_bcn0Xc1j5RGwKiWAOCZiWRDXPAeX2c0c99whGSOw0USju_woDYSN_sGqOSCbrGbDfFFbZMJOdp8To-NQJREz5cqFWSD7BFUyQ1zmUti19uH_TyKxbpiP_oTVM8/s660/scene4.jpg" />
     <div class="pg-shade"></div>
-    <div class="pg-name">THE GOWN<br/>IS THE ARMOR<div class="pg-sub">ARCHITECTURE OF A BRAND NEW DAY</div></div>
+    <div class="pg-name">THE GOWN<br>IS THE ARMOR<div class="pg-sub">ARCHITECTURE OF A BRAND NEW DAY</div></div>
   </div>
   <div class="pg-tag">✦ ORIGINAL SONG • PATCH ✦</div>
   <div class="pg-player-note">♪ THE GOWN IS THE ARMOR • ORIGINAL AUDIO ♪</div>
-  <div class="pg-player-frame">
-    
-<audio controls preload="metadata" style="display:block;width:100%;height:54px;border-radius:12px;">
-  <source src="https://patchvector.github.io/patch-music-theater/the_gown_is_the_armor.mp3" type="audio/mpeg">
-  Your browser does not support audio playback.
-</audio>
-
+  <div class="pg-player-frame" role="group" aria-label="The Gown Is the Armor music player">
+    <audio id="pgAudio" preload="metadata">
+      <source src="https://patchvector.github.io/patch-music-theater/the_gown_is_the_armor.mp3" type="audio/mpeg">
+      Your browser does not support audio playback.
+    </audio>
+    <div class="pg-geometry-row">
+      <button class="pg-transport" id="pgPlay" type="button" aria-label="Play song" aria-pressed="false">▶</button>
+      <div class="pg-geometry-area">
+        <svg id="pgGeometry" class="pg-geometry-svg" viewBox="0 0 700 110" preserveAspectRatio="none" aria-label="Geometric shapes respond to the music" role="img">
+          <defs>
+            <linearGradient id="pgGeometryGold" x1="0" x2="1"><stop offset="0" stop-color="#a7793f"/><stop offset="0.5" stop-color="#ffe4a2"/><stop offset="1" stop-color="#b68d50"/></linearGradient>
+            <linearGradient id="pgGeometryCyan" x1="0" x2="1"><stop offset="0" stop-color="#1d8caa"/><stop offset="0.5" stop-color="#7df5fa"/><stop offset="1" stop-color="#35b6d2"/></linearGradient>
+          </defs>
+          <path d="M0 55 H700" stroke="#32606a" stroke-opacity=".25" stroke-width=".6" stroke-dasharray="2 16"/>
+          <g id="pgGlyphs"></g>
+        </svg>
+      </div>
+      <button class="pg-mute" id="pgMute" type="button" aria-label="Mute song" aria-pressed="false">♫</button>
+    </div>
+    <div class="pg-timeline">
+      <span class="pg-time" id="pgCurrent">0:00</span>
+      <input class="pg-seek" id="pgSeek" type="range" min="0" max="1000" value="0" aria-label="Seek within song">
+      <span class="pg-time" id="pgDuration">2:26</span>
+    </div>
+    <div class="pg-status" id="pgStatus" role="status" aria-live="polite">GEOMETRY • READY TO DANCE</div>
   </div>
   <div class="pg-quote">“The build is the language. The battle is won.”</div>
   <div class="pg-foot">PATCH • ANIMATED MUSIC THEATER</div>
 </div>
+<script>
+(function(){
+  'use strict';
+  const root=document.getElementById('patch-gown-theater');
+  if(!root)return;
+  const audio=root.querySelector('#pgAudio');
+  const play=root.querySelector('#pgPlay');
+  const mute=root.querySelector('#pgMute');
+  const seek=root.querySelector('#pgSeek');
+  const current=root.querySelector('#pgCurrent');
+  const duration=root.querySelector('#pgDuration');
+  const status=root.querySelector('#pgStatus');
+  const glyphContainer=root.querySelector('#pgGlyphs');
+  const svgNS='http://www.w3.org/2000/svg';
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const shapes=[
+    `<g stroke-linecap="round" stroke-linejoin="round">
+       <circle r="2.1" fill="url(#pgGeometryCyan)" stroke="none"/>
+       ${Array.from({length:6},(_,i)=>`<g transform="rotate(${i*60})">
+         <path d="M0 0 V-18 M0 -10 L-5 -14 M0 -10 L5 -14 M0 -15 L-3 -18 M0 -15 L3 -18"/>
+         <path d="M0 -18 L-2 -20 M0 -18 L2 -20"/>
+       </g>`).join('')}
+     </g>`,
+    '<polygon points="0,-13 12,10 -12,10"/>',
+    '<circle r="12"/>',
+    '<rect x="-11" y="-11" width="22" height="22"/>',
+    '<polygon points="0,-14 13,0 0,14 -13,0"/>',
+    '<path d="M-13,10 A15,15 0 1,1 13,10"/>',
+    '<polygon points="-12,-9 12,-9 12,9 -12,9"/>',
+    '<path d="M-12,8 C-10,-10 9,-12 11,1 C12,12 -4,14 -7,4 C-9,-3 2,-7 5,-1"/>',
+    '<polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7"/>',
+    '<path d="M-14,0 Q-7,-17 0,0 T14,0 M-14,7 Q-7,-10 0,7 T14,7"/>',
+    '<polygon points="0,-14 4,-4 14,-4 6,3 9,14 0,8 -9,14 -6,3 -14,-4 -4,-4"/>',
+
+  ];
+  // Frequency envelopes and transient onsets measured from PATCH's actual 2:26 MP3.
+  // These are NOT synthetic beats. Pre-analysis avoids browser CORS audio silence.
+  const songStep=512/11025;
+  const songBands=["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JigmJTTM7W8eFTppViMdHWeux+L/0qOchVtDUZ25ta+poaespqBnLFbg9rzFv8HByNuwiW5zgFIsKCkrKSxLkNTbyMi4pHqZnZ2Og2/Y9tjKtH5CPYm1j1UwKjqc0sORSC8zd6yabjswW6/k59XQxsPPvZl7YmNfSUdKT1dUV2BjZV9bVE3C//z8+965oMn+38WgiH2189mxk36B5OnL39nW8+3u0cvBsJuOfHJlaXB5eM709vPw3JGe1dnElHuP///P4/X29NfKsM3/27OuuNPMyqx5xv/s6dbh/P///+HXu5uMhYByanFyi/7/89micXTT5720i2tlxf/Rzc6zg4rJ2rzAr5CIoMitnKenzvjAam94d3LA///u3cSskLSacKX+/+fV0Ny1fWpxrMzQzNjr6v/v19ji7+Dg3rnO/7qNmqyjoZydoNnzoIWGlZee07SMj52ZkpeeqpublZOXiHt1dn+D7dt0eLCmfNH+2tnTvbyxtqqjtrm5t8HGq524rrT//+zf2uP1///q0KOPeXp0bG98h397hH11fHJpbGxyZ4Srja3//+Dg2+js8efj7//r6u3g4NnZ3cj//+3i+f/////mxqSdk4h7f350d4CdztvRxNjn4PnMlZGVi4bk3qyvvLeKqejPtIV9gKDh7safhYGs8cnBt5WKh973va2lrZ2kp6Gbc3eH0P/48P/y1Zynqp6Dd3nM//Pm/v//89/7////vqqysrC3v62s9eejkIGHmMTkyrrM4eXhy7K2samroKOZh4KBfqT1tXOCh36W+Nyor7C0s8TFucDCvHhap8nFx8W12f2mrrmro5jN4NTKzM3EuqOHbFVEOTc6REA6MSwnKCYfISg1zPSjr7SRYkB7v73w3paAfLC4u66vzv/fpZ+30MzT0bSflIJZRkA6NTI2OMj1gDUrO2todmZKY6SEl//brKqstcbJx8G3qJ+EVpC0spuCYczssLCplFuU5+Hd1si/s7apkXxcPzU1P0AyLy8oIyYkIlFfTdXlwLimgkc/gcTM/+K5vK+sk25RP4vrzrzCx7y9zbmEYkxHPTk3NjQzMjBykGFBOlF3XDs1NmSYkqz/48nVy5tZabW7nnBGPGi6yK19R1XY26mwoZaDn9Xl2MvGv7OtpoKGhFtpnbu2s5dVNWmwr4dOMWfw8dLJv4hRTY+npfi1V1GW18i4pKnK9ZBCX67VzOTbzaeDbk9FR0Q9QkZn9+pZOTpUc217ZFF/tb/o/7aamnxURm2rqZl3SUhKdn1VPDlu8eSro6WooLe7p6Oeqaqpvr+rgVZMRWakrLWztKGUyMqsc0t+7s2ioJykhGupus36xq+ftqJ4TUJDx/7FsLaxtbrHmmZURUNKUVNNTFBRVYeJX01KX29iaWRaaG5t2fy8vsG6sZ2zwrq8uMG0qoVrgoyKm+3MrqCrrqLK7eHVysLJwKl6YVFLRD99tqSqtLGwrZ93U0o/kvDLqKejsrGu1uHw/8W3rpGQiWRWVsbz2c7Kz8G/yq+elG1fWkE+ODg7QI7wrkI6OV5oPzAyOHungN7mrLjCt6yYoaONj4BbVY/Brq+mrND/zbCqpbCsytG8oZt5WkVDREM+NTUyMTQzMjI0NjEzN2uHZ6v4z8LLwcrBorG6uL66tayqqoxdXX2SwM3FvLaupqGjmJF9dWhTNTU6P09GO0NAPUNMTlBMSlBPS3r///3//sudo/X2yKmPgpnu/9mmgH68+tf6/fXt8vvx5NrAop+XhHBufYN4rPz///juqYjS4s6mfnDJ//Pe8PP12Lq2xvz/xL271+Tdyo2P+vbt3uz//////+nOrpCGhIF3cXd60///78eGc6//1bSaeHKR/O7HyriSdardzsa5l5GLw8egusCy8PuGYW97cJr///Ptybedn7GAgdb/////8MySc2qOvbm0xerp///P2Nz3//voyLr/6JynpqegoJ2juPzIkISJm5/Nyp2YoKCVkJWikY2Ojo6CeH57cW288ZNokLCJofnn1tHJvb6ytbSvwMDN1MnIq6i4pub///Xz+P////HXt52LjZWMhX+AgHJ7ioR9d3FkaHNtcqyogO7/8+HVytbZ6OLm//br9/Xt1dLawOH/8vb88vf///LLtqSNj4mFfXF5fJHK2cjQ0OPj7O+spKafgsH8u6yuupyMytS/mHuMjbzv57KTiY3r8MW9p5KAvf7NqKu7u8LCqJaBb3aj+//q7fX0tpyqmoNzeZT//+no+P//6vT/9f/gqq25ura4qqTP+rOfkpiZqubcxrGtn6O5sa+so5ylpZaLho2DfeHnhnt+f36j1cvIycrMyLeKcG5rdIy3x7ezmWdxq615XWRzgaPg69zY3snGwKaLeG5raHBqX2FlYmNgYmNfXF9zq6KGho18eXViWXOYe2hqaW5tbWpjhZ91YmJfXmeJlo2Lf3tzb25qYl9iX15jYWJdX19eXE9QWVtZiMXGt7CUZWWOraCQaF2Bp6mfmZCGh522pZ2inp650MnLxsK9q5eKj5qQjouAkJWDdGpeXmBeXWVgdaGWfn15bmVgZmiEoXhoaWlna2RgYIqUenZwYVlwj4x+dnVpaWtlYV1VUFRaVktQVlNXXWBgX1xaYqzbzbmvkWhlk6WJcmVfg6qqmpWViIOKpKCSi5GUs83NyMLFu6mnrKKmjnl3enJweXZzbWRiZGliYX+jmId3aWJdaHZ2jp1/b3J4a2ltanWblnRuZmZdcY6MiIOGh3FnaWxwZmVkXWl4fXZybGZdYmBeYl+ApKqjqKeXhHNWQ0BDVHehqaCXe05PjaGCUkJGUmCesayspaORgGxQRD9AQUhGQDw/Pz1BP0E7MS8+gK2tqIJOQWaHelI8QVZ2n6mhnpmZj4l9hYWKh5ORjYuMkY6Ni4B6bldMSEA3ODYzMzQ3Ojo9PTw8LyAfHR4gLz05MSUgHCI1NB82RzMdFxUWGBUWGiA8XWZRRTswIhsXFhYTERAQEQ4NDQwJCAgIBwYHBQI=","K1VEExgnHg8jKRgWJyIRISgZESQlFi4+JREiKx5itJQxJzIjGCwpFhwnHRImKRkeMSoZJjEkHTU0Ii44IhQoLR4cLiodMzknHCsnGCEwKCE6NiIjNjM3nK5XJDIyJjA7Myo0NS8uOjgwOEI8PEVFRUhPTl12bG5vb21obW5eWGBdW1dgZ2NjY19pa1VWZWhowv/hg21lXlpbYWJrW1JUWlVTUE1PTk9QSUtRV1Nkbmt3cWtpYlxcXm9nUk5TUVNLS0xSaV1US1FKa+34kGViXVdYXVJNVVdYVmBSSVFSUVVbUUhLUUpUbGVlaGpmXl1bVFhdW1hbWFpZZWdjam9aXGBcZNH/zXtrY2FdaGdhZ2FcV1pWWVdXVFRTVFJSVlVTZm9obWxnYmNkXV93aVVTXldNT1BKWHBWSk9RUIr//Y5qZVtWXV5WU1pXUl9mX19kZmdqcGZleX9xgot0eYh4WkxFOjApJSUlMj0+PDYoJT03NUFDO0XB7pAyHxgdKSQwPzgkFUOJiXl9YjIiJDdAb4mNk5ZySC0sNj46V1xQSkM8KiYvJyckJTc+Mzc0MjOQ98hlUzopIh0cGxcSDDSJjT4UH3WiaTk4MCIREk5vUjU0Lk6FiZqnklMmIT5ncnR2aVpvXkI9MiNM3/uzo6CMWiwiJUBIOyxbs8OqjlcwJjdZfGg6OkJcZVxng4J5YVdwb15EKB4tOCkXFR5JUTImKi8yofWzRTcyLCkmIhwWEg1JnI01DyWDn1xKUWuifEWNtKODTzJJXFI/QklOTjwvKiIkKCIsXXRdMhgXZun1qJusqpJeKiAwNCgaGD13h4aOlGpFX1Y+JyUuR3JwQCkkNlOBnaN7OC82QVhCKSYfQ3iZkY6Qisj4njkjHyQhHh4bFxYZVpqBXVJAk59eZnNZKyImR19pi4RRJx0gJSkoKSUiTm51hYaIg15USzgoI3/z3J6Ye0MiHyUtLCMcHytchnZGGhU1bIaOdldDS1VfYEEpIz1gYV9cSyEXN1dZVEAbK19rZ2JeW1nC5YYsHRkUFBcVEhAOD2urfB4NQ6CaSEtWialhRJC3nV1BPzEtQ11cQSsmN2x3XVFZUD5NWW56gISy/9qlnKSrmHBcQCojIiYyNCkgHyM6VlpEKElJLVZaVmVdT0JYYDxdj3NVWVZNPS4kJkFXU05UU0te1t9wJxwXGSsyKCo0LCJsk10UFFSjjVFHLD9eQzZ1pq2lZystVKGohHxwZ3GPjm8+OGV2YlFbYWxusfStPyEbGyQ8TEk2IRMRNHeetLy/mVaHpqSYcEJUdmxsb1YvU15gZUIgIzxcfIFlS3qNgoJxPyEhJjBBUF1cYGFRPzQqKSowNTc6QkM+Oz5CRkdKTFN1ttHU5//QhKG97eyoXl+Iv/D6tHtxhZ/Nxtzf2f////zbuIZ6d2dhZFxaZZ20qrOzmWp6np+GYlNUdbTm+f/y+P/ai2+v1OT5/97P6L9pecfX19/Z0vn//+XAqJJ9bmJeXlhjXWaS2eupaFlqttrGe1pTZaHs///ZbFt1t7lxXFlbhMPp9vHl2p9sX1xaWHf7/+/x///Qia6ZdZK2use/pH92dmhdhI5ycoW20czBzNvq5+PewqOfn5KEgIB1aF5gV11mVVhdW1Sw/950YmFhX19gWVlaVlFlaVpYWFhZZWlcaZuGiaS3zOn79v/////82P///////8x3bHeVobzS1tLV///z/+SieGVrY1tjZ2xlYmBXVlVLUVJOU22SbFqhv9r////4////yJyRg36KiIF/cGJ7j5GsvcjL/P//06eJb25vYV1fY1phwP/y6dG8oIjA39nTxJyy4efkyINnd9D/wnRhXoXo///Xe26CpMXb04Bih/3//////////9SqeW13j7zEy8vR69q9xbGCYF1sgH6NkpGXlpKVoaKIZFx2f3yBgoSHh4aAi3tia+P/xIR6dnR5fX15bGlkY3ZrYWJmY2JtaWNmc3dsZFVbX2hmSzdJXFYyJjhYZFJHSEY7QVVILSkzO5f/z1IxMTIzMi8oIB4cGxoWFBISGSw8QTYhJSciOVppUVlcYYZ+c4qKe21VbYxwYGRYODk2Kyhgn7Tv/rSGZFFANiwnIx4gJWyYZCUYTJyMRDsrPWtTSYOBi6a4u5N0Y1BBOjsySomCXlg/KTFGWV1jXDin/b1kZ4WMWyYvOj83NzQyMCQYFRwpQEo7HjJJQ0NgcGBORm6WnYOGfW1dWVhORjcpJSc4UHJ5d5Go7+BvPzcyKiQfIh0aGiN8nVsWE1ulhEJGPIOYf2JqcGhvf3JNa2+NjFspK0VxjodgO3eTho2GeGV6xfupcXyBfWE8JyYlITRintfbxYM/KUh6d0gnGy9OU1h6eU8lMHiZgE0yJitjkamsf4aXdzkrT2+XtfrhlH1mRS8pJykqLC83hphOKyhmoH1cVEJQZEJNgazKsms1LV2or5JmNCgwSk85JyQmS4ikoqKrrub4o2hBOTU6Unabe1paNkV3hH1fS1JNX2RoQBwnTnONkIyJcF5xen57d29gUDUsKS0wOWF2ipWQi6TtukwpIyIkJicqLy0pQZeXQh8ofqhrTVxun4VKfLm2t8nSs5+BaVtdYFdTk9TYzrdxOltvVDo1L1Xf74VfbZCep5RqRjE0N0Vif5d6ZFpQb499RCwkLkl3obfDnFEzQV50eouvo3d/YDUsKUyTon54dYLL/82ARC4vKywtKyclJUiPgTYrOIijaFhELlBeN0iUw7aVdn9vfae4pW87M2eBY0dBQleIrqyvvKVy3dhtSEVCNC4oPm6GdEkwLSwoIyEpNzksIT1MLkKBlZOiwbiykFdEPTo5NjdDQTYwPzYkJDVGSVZocl9GNCUkJSYoKy0rKi0uLjExNDs8O0BESkpOU2Cl3dPX//aVjaTU6MBxXmum3vzPeW15i7zG4Ofg+P////fatJFtbGtramNpdqixsLOjc2ucoY5vUlNokM7z/fn8//a1c5fX5vTo2cfI0IBsqt3c8/3p+v//99O0ooNxaGNgW2NhZILB78VxYWKl39miaFhZg9f+/uSMaGuewIlnX1horOL8/+vQuH5gY2NkbsD//9v+//2kmqZzgbbAzcOzi3Vral50lX1ocaLJ0Nze2PLi1NPEpZGUjIh+g3dyaWJbZHdmWVpjXXX//51qYl1WXV1VUVZZVVtrXlpbWVVdaFdRgI52lqy+1fTx//v3///Y3///////+J58dn+RstXY1972///7/MqUeXJtZnFkZWxlYGFhYFVQVVBKWYF9VIezzuz//////f/bqqCUgoB/f358aXWPhpe1urrg///rv5x4b3poWlZZV1+J4vDx47mvjKfR2+LYrJrO3+ffrXNisf/jimheZLT///afZXKUts/jpmlq4v//////////78mRbXJ4sMrFwczn8b/Jw5lmXGF9hIOHjpKJhI6KkI5wX2V4dHODk4yHiJWgk21aqv/1jXx1dnNydW9pZWZdZm5oZ2dmX2NhXF1kaml2fW1ufoSGfG9tYFFHQ0ZlbFtPS0pMY2dHQUc/S3udjHtrXFBLSz42Ozs5Nz09QUs/MzE4MSsuMC44XVdJTU5JQ0JCNkdgQzA1OzYzOzcqVGZELTAvKEuAfGRVTUA8QjoyMDMvLTIzPEE8NDM6OTAtNDU1bHtth514RUNtnaeTXEpSa5Otv8TGwbWYfFxSRUuPuLGnoamrt8GwjGRMSUlVW1ZTUEpUXFFHPj84SmZTS1NPQUVRVVdma0E2PkdTWWFhZG9oTkA+OjJcjYhyW1poZW5fV0xIQEBHPz08PDw8R0U9OUE+SISTp7e8oV5Pm8rgv2dOYYXD4+rl5uTTs669w7O5y9HO1MXMzNfe49q1rKd/aW9tam9mW1tdcGpdUmJ6a15pY09WZHGEkXdWUE9ngYZ0dXiHeF5oem5kgJ+NenFydHiEe29vaWZXTVJWVllUVlpcW1tdUlFQV1RYWlNUTk5IREE5NTZFRzYvLCsuOz06Nj0yLkFJWltMPzY4PzkxKy4yMTVGOSQiIScsKCAtNC47SlJURzo3MUJPTjgsLCw7SExJSUhCRUZAOjQvLThIUFVWT0xGSkdCOTY2MzI1MyslIykzNjIvLS0qIRYVFRQXJkNPSjUzNUNba1EwNTgvHis/Pi9Ig3RgZmVfYGFPRTclISIeGhcUEhAQEhAODQsJCQkLCQM="];
+  const songBeats=[0.05,1.07,2.74,3.2,3.72,5.39,6.41,8.08,8.54,9.06,10.73,11.75,13.37,13.89,14.4,16.07,17.04,18.72,19.23,19.74,20.71,21.41,22.38,23.41,24.06,24.57,25.08,26.05,26.7,27.72,29.4,29.91,30.42,31.39,32.04,33.07,34.74,35.25,35.71,36.97,37.38,38.41,40.08,40.54,41.05,42.07,42.72,43.75,45.42,48.07,49.04,50.06,50.71,51.22,51.73,52.71,53.41,54.38,55.26,56.05,56.56,57.07,58.75,59.72,61.39,61.9,62.42,63.39,64.04,65.06,66.04,66.73,67.24,67.71,69.06,70.4,72.07,72.54,73.05,74.07,74.72,75.74,77.42,77.88,78.39,79.37,80.06,81.04,82.06,82.71,83.22,83.73,84.71,85.4,86.38,88.05,88.56,89.07,90.05,90.74,91.72,93.39,93.9,94.41,95.39,96.08,97.06,98.73,101.38,102.4,103.42,104.07,104.58,105.05,106.39,107.74,108.58,109.41,109.88,110.39,111.73,113.03,114.75,115.22,115.73,116.75,117.4,118.38,119.4,120.05,120.56,121.07,122.42,125.39,125.9,126.41,128.08,129.38,130.73,131.24,131.7,133.38,134.72,136.07,136.58,137.04];
+  function decodeBand(encoded){
+    const raw=atob(encoded), result=new Uint8Array(raw.length);
+    for(let i=0;i<raw.length;i++)result[i]=raw.charCodeAt(i);
+    return result;
+  }
+  const bands=songBands.map(decodeBand);
+  const dancers=[];
+  let nextShape=0, frame=0, lastTime=0, lastBeat=-1, beatCursor=0;
+  let bassLevel=0, midLevel=0, highLevel=0;
+  const routes=[
+    {x0:100,y0:58,x1:340,y1:48},
+    {x0:600,y0:49,x1:350,y1:62},
+    {x0:185,y0:72,x1:445,y1:45},
+    {x0:520,y0:40,x1:275,y1:65},
+    {x0:125,y0:45,x1:355,y1:60},
+    {x0:570,y0:67,x1:345,y1:45}
+  ];
+  function addDancer(){
+    const i=nextShape++;
+    const route=routes[i%routes.length];
+    const g=document.createElementNS(svgNS,'g');
+    g.setAttribute('class','pg-glyph');
+    g.setAttribute('stroke',i%2?'url(#pgGeometryCyan)':'url(#pgGeometryGold)');
+    g.setAttribute('stroke-width','2.1');
+    g.setAttribute('stroke-linecap','round');
+    g.setAttribute('stroke-linejoin','round');
+    g.setAttribute('fill','none');
+    g.innerHTML=shapes[i%shapes.length];
+    glyphContainer.appendChild(g);
+    dancers.push({g,route,age:0,duration:2.3,phase:i*.79});
+  }
+  function actualSound(time){
+    const f=Math.max(0,Math.min(bands[0].length-1,Math.floor(time/songStep)));
+    return {bass:bands[0][f]/255,mid:bands[1][f]/255,high:bands[2][f]/255};
+  }
+  function syncBeats(time){
+    // Seek-safe: find the first beat after the current playhead position.
+    if(lastBeat>time+.05 || time-lastBeat>3.0){
+      let low=0,high=songBeats.length;
+      while(low<high){const m=(low+high)>>1;if(songBeats[m]<time-.15)low=m+1;else high=m;}
+      beatCursor=low;
+    }
+    lastBeat=time;
+    let fired=false;
+    while(beatCursor<songBeats.length && songBeats[beatCursor]<=time+.04){
+      if(songBeats[beatCursor]>=time-.18)fired=true;
+      beatCursor++;
+    }
+    return fired;
+  }
+  function timeLabel(value){
+    if(!Number.isFinite(value))return '0:00';
+    const sec=Math.max(0,Math.floor(value));
+    return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');
+  }
+  function updateProgress(){
+    const total=Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:146;
+    current.textContent=timeLabel(audio.currentTime);
+    if(Number.isFinite(audio.duration))duration.textContent=timeLabel(audio.duration);
+    const value=Math.min(1000,Math.max(0,Math.round(audio.currentTime/total*1000)));
+    seek.value=String(value);
+    seek.style.setProperty('--played',(value/10)+'%');
+  }
+  function render(now){
+    if(audio.paused||audio.ended){frame=0;return;}
+    const dt=lastTime?Math.min((now-lastTime)/1000,.06):0;
+    lastTime=now;
+    const time=audio.currentTime||0;
+    const energy=actualSound(time);
+    bassLevel+=(energy.bass-bassLevel)*.35;
+    midLevel+=(energy.mid-midLevel)*.3;
+    highLevel+=(energy.high-highLevel)*.3;
+    // Real transients in the MP3 cue the entrances; only one featured shape.
+    const onBeat=syncBeats(time);
+    if(onBeat && dancers.length===0){addDancer();}
+    for(let i=dancers.length-1;i>=0;i--){
+      const d=dancers[i];
+      d.age+=dt;
+      const p=Math.min(1,d.age/d.duration);
+      const ease=p*p*(3-2*p);
+      const r=d.route;
+      const x=r.x0+(r.x1-r.x0)*ease;
+      // Travel follows the song; bass and melody change the shape's size and lift.
+      const y=r.y0+(r.y1-r.y0)*ease-8*bassLevel+4*midLevel;
+      const scale=1.2+.65*bassLevel+.24*midLevel;
+      const rotation=(p-.5)*14+highLevel*7;
+      const fade=Math.min(1,p*7,(1-p)*6);
+      d.g.setAttribute('transform',`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rotation.toFixed(1)}) scale(${scale.toFixed(2)})`);
+      d.g.setAttribute('opacity',Math.max(0,fade).toFixed(2));
+      d.g.setAttribute('stroke-width',(1.8+midLevel*.9).toFixed(2));
+      if(p>=1){d.g.remove();dancers.splice(i,1);}
+    }
+    frame=requestAnimationFrame(render);
+  }
+  function clearDancers(){
+    for(const d of dancers)d.g.remove();
+    dancers.length=0;
+    lastBeat=-1;
+    lastTime=0;
+  }
+  function updateState(){
+    const active=!audio.paused&&!audio.ended;
+    play.textContent=active?'Ⅱ':'▶';
+    play.setAttribute('aria-label',active?'Pause song':'Play song');
+    play.setAttribute('aria-pressed',String(active));
+    status.textContent=active?'GEOMETRY • MOVING TO THE REAL SONG':'GEOMETRY • READY TO DANCE';
+    cancelAnimationFrame(frame);
+    frame=0;
+    lastTime=0;
+    if(active){frame=requestAnimationFrame(render);}
+    else{clearDancers();}
+  }
+  play.addEventListener('click',async()=>{
+    if(!audio.paused){audio.pause();return;}
+    // Keep the MP3 connected directly to the browser speakers.
+    // Routing cross-origin audio through Web Audio can silently mute it.
+    try{
+      const started=audio.play(); // Begin inside the user's tap for iPhone Safari.
+      await started;
+    }catch(err){
+      console.error('Audio playback failed',err);
+      status.textContent='MUSIC COULD NOT START — OPEN THE ONLINE THEATER OR CHECK INTERNET';
+    }
+  });
+  mute.addEventListener('click',()=>{
+    audio.muted=!audio.muted;
+    mute.textContent=audio.muted?'×':'♫';
+    mute.setAttribute('aria-label',audio.muted?'Unmute song':'Mute song');
+    mute.setAttribute('aria-pressed',String(audio.muted));
+  });
+  seek.addEventListener('input',()=>{
+    const total=Number.isFinite(audio.duration)?audio.duration:146;
+    audio.currentTime=total*Number(seek.value)/1000;
+    updateProgress();
+  });
+  audio.addEventListener('loadedmetadata',updateProgress);
+  audio.addEventListener('durationchange',updateProgress);
+  audio.addEventListener('timeupdate',updateProgress);
+  audio.addEventListener('play',updateState);
+  audio.addEventListener('pause',updateState);
+  audio.addEventListener('ended',()=>{updateState();updateProgress();});
+  audio.addEventListener('error',()=>{status.textContent='MP3 COULD NOT LOAD — CHECK INTERNET OR OPEN ONLINE';});
+  audio.addEventListener('waiting',()=>{if(!audio.paused)status.textContent='LOADING MUSIC…';});
+  audio.addEventListener('playing',()=>{status.textContent='GEOMETRY • MOVING TO THE REAL SONG';});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){cancelAnimationFrame(frame);frame=0;lastTime=0;}
+    else if(!audio.paused){cancelAnimationFrame(frame);frame=requestAnimationFrame(render);}
+  });
+  updateProgress();
+  updateState();
+})();
+</script>
+</body>
+</html>
