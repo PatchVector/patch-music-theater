@@ -1,0 +1,43 @@
+<style>
+#patch-gown-theater{box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;background:linear-gradient(160deg,#071827,#0b1a2a);border:1px solid #d3ae68;border-radius:16px;padding:12px;color:#f6e5bc;font-family:Arial,sans-serif;text-align:center}
+#patch-gown-theater *{box-sizing:border-box}
+#patch-gown-theater .pg-head{font-size:10px;letter-spacing:1.3px;color:#e4c681;font-weight:bold;margin:2px 0 10px}
+#patch-gown-theater .pg-stage{width:100%;aspect-ratio:1/1;position:relative;overflow:hidden;border:1px solid #28667c;border-radius:11px;background:#061423}
+#patch-gown-theater .pg-stage img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:patchGownFade 32s infinite;will-change:opacity,transform}
+#patch-gown-theater .pg-stage img:nth-child(1){animation-delay:0s}
+#patch-gown-theater .pg-stage img:nth-child(2){animation-delay:8s}
+#patch-gown-theater .pg-stage img:nth-child(3){animation-delay:16s}
+#patch-gown-theater .pg-stage img:nth-child(4){animation-delay:24s}
+@keyframes patchGownFade{0%{opacity:0;transform:scale(1.025)}3%{opacity:1}22%{opacity:1}25%{opacity:0;transform:scale(1.085)}100%{opacity:0}}
+#patch-gown-theater .pg-shade{position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(3,13,24,.85));pointer-events:none}
+#patch-gown-theater .pg-name{position:absolute;bottom:12px;left:12px;right:12px;text-align:left;font-size:17px;font-weight:800;line-height:1.15;color:#ffe8b5;text-shadow:0 1px 6px #07121b}
+#patch-gown-theater .pg-sub{color:#56e2ed;font-size:9px;letter-spacing:.8px;margin-top:5px}
+#patch-gown-theater .pg-tag{font-size:9px;letter-spacing:1px;color:#59dce9;margin:11px 0 8px}
+#patch-gown-theater .pg-player-frame{position:relative;padding:5px;border-radius:13px;border:1px solid rgba(91,229,237,.62);background:linear-gradient(125deg,rgba(36,210,229,.16),rgba(214,169,92,.18));box-shadow:0 0 16px rgba(52,195,212,.10)}
+#patch-gown-theater .pg-player-frame:before,#patch-gown-theater .pg-player-frame:after{content:"";position:absolute;width:21px;height:21px;pointer-events:none;z-index:1}
+#patch-gown-theater .pg-player-frame:before{top:-2px;left:-2px;border-top:2px solid #e0b769;border-left:2px solid #e0b769;border-radius:12px 0 0 0}
+#patch-gown-theater .pg-player-frame:after{bottom:-2px;right:-2px;border-bottom:2px solid #54e5ee;border-right:2px solid #54e5ee;border-radius:0 0 12px 0}
+#patch-gown-theater iframe{width:100%;height:190px;border:0;border-radius:9px;display:block;background:#24282d}
+#patch-gown-theater .pg-player-note{font-size:9px;letter-spacing:.7px;color:#e1c485;margin:5px 0 8px}
+#patch-gown-theater .pg-quote{font-family:Georgia,serif;font-size:12px;font-style:italic;color:#e5c78a;margin:12px 0 2px;line-height:1.45}
+#patch-gown-theater .pg-foot{font-size:9px;color:#70cbd6;letter-spacing:1px;border-top:1px solid #314b59;padding-top:9px;margin-top:11px}
+@media(prefers-reduced-motion:reduce){#patch-gown-theater .pg-stage img{animation:none}#patch-gown-theater .pg-stage img:first-child{opacity:1}}
+</style>
+<div id="patch-gown-theater">
+  <div class="pg-head">♪ PATCH • MUSIC COMMAND</div>
+  <div class="pg-stage">
+    <img alt="Scene 1: The gown and futuristic city" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghiNFcpwq1Dlg0XDFyIM_mW-7GGiG_mikRkmEW1sD3P2rTmYA5Zvf4j58Oqoy1Zmx0Kz3K02KLegNwfucyaRY8IESubywnuUjUHlycmnLpeXQGJnhPAdAHA10VED5N84h_2ksvi4-w1YiYWO7fBghUb5DcaiOuDfc4SiLjbCAxKi1mDCtkusDLa3ZUGV4/s660/scene1.jpg" />
+    <img alt="Scene 2: Golden architecture" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxc5u_cpP4PctR7eAwo4w33KOvVR_9jWa0S0v93rA8NGK8ClCZU0gUhfWG6T7yD5xj-_Byh16cdJWWARKZcwTd904_61N5xMLnYzeFhTa6WJG-6lZrEzilHED8zGYSTmHwmNEGBf3yGz0WbHlzsuRo3TmIoWl4NwFj92_ZS4m-LXBdk73i-jz2cIovRb8/s660/scene2.jpg" />
+    <img alt="Scene 3: Glowing digital frequency rings" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjr4fghkQ0Ap_KKn7C9XLb9lLlSZEobkMSqy96AIzMnMKaMPfd5_DMpbm2xm0OjX-mHvjNpZY4PPk5h22GxqpSrNv1ScUFD9BXa6_0SIxdUAd9poLsPDi9NyXuPlKfNyYFkIlhm2SZ7EuF3XAT-fAARIB0BNFrzZyAWqCP9a9QeMY8Xl4s9HisrnTBsmxU/s660/scene3.jpg" />
+    <img alt="Scene 4: The armored woman" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8HasTFWCmOuaa0XaWMBqJxsykHbvlvQ9yP1pteQV5Q1xrtJxYbVseWaEY9KeeKVNS_bcn0Xc1j5RGwKiWAOCZiWRDXPAeX2c0c99whGSOw0USju_woDYSN_sGqOSCbrGbDfFFbZMJOdp8To-NQJREz5cqFWSD7BFUyQ1zmUti19uH_TyKxbpiP_oTVM8/s660/scene4.jpg" />
+    <div class="pg-shade"></div>
+    <div class="pg-name">THE GOWN<br/>IS THE ARMOR<div class="pg-sub">ARCHITECTURE OF A BRAND NEW DAY</div></div>
+  </div>
+  <div class="pg-tag">✦ ORIGINAL SONG • PATCH ✦</div>
+  <div class="pg-player-note">♪ THE GOWN IS THE ARMOR • ORIGINAL AUDIO ♪</div>
+  <div class="pg-player-frame">
+    <iframe src="https://drive.google.com/file/d/1xEYA7mEkkwN2a3A0zV_dEXOKB77zu8I9/preview" allow="autoplay" title="The Gown Is the Armor music player" loading="lazy"></iframe>
+  </div>
+  <div class="pg-quote">“The build is the language. The battle is won.”</div>
+  <div class="pg-foot">PATCH • ANIMATED MUSIC THEATER</div>
+</div>
